@@ -1,0 +1,347 @@
+<!-- ================= ULTRA PREMIUM MUSIC LABEL + SPOTIFY STYLE UPGRADE ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-RECORDS | Luxury Music Label</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+background:#050505;
+color:white;
+font-family:'Poppins',sans-serif;
+cursor:none;
+overflow-x:hidden;
+}
+
+/* CUSTOM CURSOR */
+.cursor{
+position:fixed;
+width:20px;
+height:20px;
+border-radius:50%;
+background:radial-gradient(circle,#D4AF37,#00c3ff);
+pointer-events:none;
+transform:translate(-50%,-50%);
+box-shadow:0 0 20px #D4AF37;
+z-index:9999;
+}
+
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.loader-text{
+color:#D4AF37;
+font-size:30px;
+animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%{opacity:1}50%{opacity:0.3}100%{opacity:1}}
+
+.navbar{background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);}
+.navbar-brand{color:#D4AF37 !important;font-weight:bold;}
+.nav-link{color:white !important;}
+.nav-link:hover{color:#D4AF37 !important;}
+
+.hero{height:100vh;position:relative;}
+.bg-video{position:absolute;width:100%;height:100%;object-fit:cover;}
+.overlay{position:absolute;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.6),black);}
+.hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.hero h1{font-size:60px;background:linear-gradient(90deg,#D4AF37,#C0C0C0,#00c3ff);-webkit-background-clip:text;color:transparent;}
+.btn-gold{background:linear-gradient(45deg,#D4AF37,#00c3ff);border:none;padding:12px 30px;border-radius:30px;color:white;}
+
+.card-premium{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:20px;
+transition:0.4s;
+overflow:hidden;
+position:relative;
+}
+.card-premium img{width:100%;transition:0.5s;}
+.card-premium:hover img{transform:scale(1.1);filter:brightness(0.7);}
+.card-premium:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 0 30px #D4AF37;}
+
+.music-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+.music-card{
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:15px;
+cursor:pointer;
+transition:0.4s;
+}
+.music-card:hover{transform:scale(1.05);box-shadow:0 0 25px #00c3ff;}
+
+.fashion{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+.fashion img{
+width:100%;border-radius:15px;transition:0.4s;}
+.fashion img:hover{transform:scale(1.08);filter:contrast(1.2);}
+
+footer{background:black;text-align:center;padding:20px;color:#D4AF37;}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-text">C-RECORDS LOADING...</div></div>
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>      
+
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">C-RECORDS</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<video autoplay muted loop class="bg-video"><source src="k2.mp4"></video>
+<div class="overlay"></div>
+<div class="hero-content">
+    <h1>C-Records</h1>
+<h3>WE BUILD LEGACY</h3>
+<p>Global Sound Empire</p>
+</div>
+</section>
+
+<section class="container py-5">
+<h2 class="text-center mb-4">Artists</h2>
+<div class="row g-4 text-center">
+<div class="col-md-3"><div class="card-premium"><img src="pic/artist1.jfif"><h5>DAXELL</h5></div></div>
+<div class="col-md-3"><div class="card-premium"><img src="pic/artist2.jfif"><h5>Nova</h5></div></div>
+<div class="col-md-3"><div class="card-premium"><img src="pic/artist3.jfif"><h5>Blade</h5></div></div>
+<div class="col-md-3"><div class="card-premium"><img src="pic/artist4.jfif"><h5>Luna</h5></div></div>
+</div>
+</section>
+
+<section class="container py-5">
+<h2 class="text-center">Music Drops (Spotify Style)</h2>
+<div class="music-grid mt-4">
+<div class="music-card" onclick="openPlatform()"><h5>Midnight Waves</h5><p>Click to listen</p></div>
+<div class="music-card" onclick="openPlatform()"><h5>Golden Rhythm</h5><p>Click to listen</p></div>
+</div>
+</section>
+
+<!-- ================= FASHION / ARTISTIC VISUAL EXPERIENCE ================= -->
+<section class="container py-5" id="fashion">
+  <h2 class="text-center mb-2">Fashion & Visual Identity</h2>
+  <p class="text-center mb-5">Cinematic style • Artistic visuals • Luxury identity system</p>
+
+  <!-- HERO VIDEO FASHION -->
+  <div class="card-premium p-0 overflow-hidden mb-4">
+    <video autoplay muted loop style="width:100%;height:400px;object-fit:cover;">
+      <source src="pl.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- TRANSFORMATION GRID -->
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card-premium p-2">
+        <img src="mcov/c1.jfif" class="img-fluid">
+        <h5 class="text-center mt-2">Street Luxury</h5>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card-premium p-2">
+        <img src="mcov/c2.jfif" class="img-fluid">
+        <h5 class="text-center mt-2">Cinematic Dark Mode</h5>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card-premium p-2">
+        <img src="mcov/c3.jfif" class="img-fluid">
+        <h5 class="text-center mt-2">Gold Identity Era</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TRANSFORMATION STORY LINE -->
+  <div class="card-premium p-4 mt-5 text-center">
+    <h4>Transformation Journey</h4>
+    <p>From raw creativity → to luxury identity → to global fashion influence</p>
+    <p style="opacity:0.7">Every artist has a visual evolution. We capture it in motion, light, and sound.</p>
+  </div>
+
+</section>
+
+<div id="platformBox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;">
+<div style="background:#111;padding:30px;border-radius:20px;text-align:center;">
+<h3>Select Platform</h3>
+<a href="https://linktr.ee/Daxell_H" target="_blank" class="btn btn-warning m-2">Linktree</a>
+<a href="#" class="btn btn-info m-2">Spotify</a>
+<a href="#" class="btn btn-danger m-2">YouTube</a>
+<br><br>
+<button onclick="closePlatform()" class="btn btn-light">Close</button>
+</div>
+</div>
+
+<footer>&copy; 2026 C-RECORDS</footer>
+
+<script>
+window.onload=function(){document.getElementById('loader').style.display='none'}
+
+const cursor=document.querySelector('.cursor');
+document.addEventListener('mousemove',(e)=>{
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+});
+
+function openPlatform(){document.getElementById('platformBox').style.display='flex';}
+function closePlatform(){document.getElementById('platformBox').style.display='none';}
+
+const audio=new Audio('hover.mp3');
+document.querySelectorAll('.music-card,.card-premium').forEach(el=>{
+el.addEventListener('mouseenter',()=>{audio.currentTime=0;audio.play();});
+});
+</script>
+
+<!-- ================= EVENTS SECTION ================= -->
+<!-- ================= ADVANCED EVENTS SYSTEM ================= -->
+<section class="container py-5" id="events">
+
+  <h2 class="text-center mb-2">Events Hub Pro</h2>
+  <p class="text-center mb-5">Explore live shows, tours, festivals & exclusive C-RECORDS experiences</p>
+
+  <!-- FILTER BAR -->
+  <div class="text-center mb-4">
+    <button class="btn btn-dark m-1" onclick="filterEvents('all')">All</button>
+    <button class="btn btn-warning m-1" onclick="filterEvents('upcoming')">Upcoming</button>
+    <button class="btn btn-info m-1" onclick="filterEvents('live')">Live</button>
+    <button class="btn btn-secondary m-1" onclick="filterEvents('past')">Past</button>
+  </div>
+
+  <!-- EVENTS GRID -->
+  <div class="row g-4" id="eventGrid">
+
+    <div class="col-md-4 event-item upcoming">
+      <div class="card-premium p-3">
+        <span class="badge bg-warning text-dark">UPCOMING</span>
+        <h5 class="mt-2">C-RECORDS WORLD TOUR</h5>
+        <p>📅 20 June 2026</p>
+        <p>📍 Dar es Salaam Arena</p>
+        <button class="btn btn-warning w-100" onclick="openTicket('World Tour')">Get Tickets</button>
+      </div>
+    </div>
+
+    <div class="col-md-4 event-item live">
+      <div class="card-premium p-3">
+        <span class="badge bg-danger">LIVE NOW</span>
+        <h5 class="mt-2">AFRO SOUND EXPERIENCE</h5>
+        <p>📅 Today</p>
+        <p>📍 Zanzibar Beach Stage</p>
+        <button class="btn btn-danger w-100" onclick="openTicket('Live Show')">Join Live</button>
+      </div>
+    </div>
+
+    <div class="col-md-4 event-item past">
+      <div class="card-premium p-3">
+        <span class="badge bg-secondary">COMPLETED</span>
+        <h5 class="mt-2">LEGACY MUSIC FEST</h5>
+        <p>📅 May 2026</p>
+        <p>📍 Tanzania Stadium</p>
+        <button class="btn btn-light w-100" onclick="viewHighlights()">View Highlights</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CALENDAR PREVIEW -->
+  <div class="card-premium p-4 mt-5 text-center">
+    <h4>📅 Event Calendar Preview</h4>
+    <p>Interactive calendar view coming soon for full booking & scheduling system</p>
+  </div>
+
+  <!-- EVENT CREATION FORM -->
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-8">
+      <div class="card-premium p-4">
+        <h4 class="text-center mb-3">Submit / Promote Event</h4>
+        <form>
+          <input type="text" class="form-control mb-2" placeholder="Event Title">
+          <input type="date" class="form-control mb-2">
+          <input type="text" class="form-control mb-2" placeholder="Location">
+          <select class="form-control mb-2">
+            <option value="upcoming">Upcoming</option>
+            <option value="live">Live</option>
+            <option value="past">Past</option>
+          </select>
+          <textarea class="form-control mb-2" placeholder="Event Description"></textarea>
+          <button class="btn btn-warning w-100">Publish Event</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- EVENT MODAL SYSTEM -->
+<div id="ticketModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;z-index:9999;">
+  <div class="card-premium p-4 text-center" style="width:350px;">
+    <h4 id="eventTitle">Event</h4>
+    <p>Select Action</p>
+    <button class="btn btn-warning w-100 mb-2">Buy Ticket</button>
+    <button class="btn btn-info w-100 mb-2">Add to Calendar</button>
+    <button class="btn btn-light w-100" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+function filterEvents(type){
+  let items=document.querySelectorAll('.event-item');
+  items.forEach(i=>{
+    if(type==='all'){i.style.display='block';}
+    else{i.style.display=i.classList.contains(type)?'block':'none';}
+  });
+}
+
+function openTicket(name){
+  document.getElementById('ticketModal').style.display='flex';
+  document.getElementById('eventTitle').innerText=name;
+}
+
+function closeModal(){
+  document.getElementById('ticketModal').style.display='none';
+}
+
+function viewHighlights(){
+  alert('Loading event highlights... (connect video system here)');
+}
+</script>
+
+</body>
+</html>
